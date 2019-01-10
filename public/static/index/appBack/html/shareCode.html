@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/index.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+	</head>
+	<body class="bgWhite">
+			<div class="index-header">
+				<span>推广二维码</span>
+			</div>
+			<div class="mui-content">
+				<div class="pop-link">
+					<h3>我的专属二维码</h3>
+					<div id="qrcode" class="qrcode"></div>
+					
+				</div>
+			</div>
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+		<script>
+			jQuery('#qrcode').qrcode({
+				render: "canvas",
+				width:100,
+				height:100,
+				text: "http://www.jq22.com"
+			});
+		</script>
+	</body>
+</html>

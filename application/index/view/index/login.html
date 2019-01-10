@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<script src="/static/index/appBack/js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link href="/static/index/appBack/css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/index/appBack/css/base.css">
+		<link rel="stylesheet" href="/static/index/appBack/css/login.css">
+    </head>
+    <body class="login-body">
+			<div class="main-header1">
+				<span class="center">登录</span>
+				<a href="javascript:void(0);" class="right"></a>
+			</div>
+        <div class="bgcolor">
+            <div class="logo-img"></div>
+            <div class="login-form">
+                <form >
+                    <input name="phone" type="text" placeholder="手机号">
+                    <input name="password"  type="password" placeholder="密码">
+                </form>
+                    <input type="submit" value="登录" id="submit">
+                <div class="wjmm">
+                    <a href="reg.html">注册</a><a href="">忘记密码?</a>
+                </div>
+            </div>
+            <div class="down-load">
+                
+            </div>
+        </div>
+<script src="/static/index/appBack/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/index/appBack/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+ 
+	$('#submit').on('click',function(){
+		  $.ajax({
+				type:'post',
+				url:"{:url('/index/index/index')}",
+				data:$('form').serialize(),
+				success:function(data){
+					data= JSON.parse(data)
+					alert(data.msg)
+				}
+			})
+	})
+ </script>
+ </body>

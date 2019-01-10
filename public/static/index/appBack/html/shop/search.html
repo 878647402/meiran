@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/index.css">	
+    </head>
+    <body>
+        <div class="search-header">
+            <a class="back left" id="back" href="javascript:void(0)"><img src="../../images/back.png"></a>
+         	<input class="left search_input" type="text" placeholder="搜索喜欢的宝贝">
+            <span class="search_submit" onclick="submit()">搜索</span>
+        </div> 
+        <div class="mui-content">
+        	<div class="product">
+        		<ul class="clearfix">
+        			<li>
+						<a href="../shop/shopDetail.html" id="shop-detail">
+							<img class="product_top" src="../../upload/1541833606.jpg">
+							<p class="product_title">核桃肽</p>
+							<p class="product_price">
+								<span class="rmb">￥</span>1280.00<s class="cost">1880.00</s>
+							</p>
+							<span class="give">消费赠送:2560.00个</span>
+								
+						</a>
+					</li>
+        		</ul>
+        	</div>
+        </div>
+    </body>
+    <script src="../../js/mui.min.js"></script>
+	<script src="../../js/openWin.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	document.getElementById("back").addEventListener("tap", function() {
+       		mui.back();
+		})
+    	document.getElementById('shop-detail').addEventListener('tap', function() {
+				console.log(123)
+				openwin('shop/shopDetail.html')
+		});
+    </script>
+    </html>
+    
+
+

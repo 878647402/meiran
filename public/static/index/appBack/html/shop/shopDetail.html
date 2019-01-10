@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../../css/mui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/good-detail.css">
+</head>
+<body>
+    <div class="pb100">
+        <div class="wrap_img">
+            <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                <div class="mui-slider-item"><a href="#" ><img src="../../upload/banner4.png" /></a></div>  
+                <div class="mui-slider-item"><a href="#"><img src="../../upload/banner5.png" /></a></div>
+                <div class="mui-slider-item"><a href="#" ><img src="../../upload/banner4.png" /></a></div> 
+
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+   
+                </div>
+            </div>
+            <div class="wrap_top0">
+                <a href="javascript:history.back(-1)" id="back"><img src="../../images/goods_return.png"></a>
+       
+            </div>
+        </div>
+        <div class="spxiangqing">
+            <p class="spname">茅台镇53度酱香白酒洞藏老坛酒陈年老酒500ml*12坛</p>
+            <p class="price clearfix">
+                <span class="normal_credit"><span class="rmb">￥</span>1680.00</span>
+               
+            </p>
+            <!--原价-->
+            <p class="original_price">
+                <span>原价</san>
+                <span>¥2290.00</span>
+            </p>
+    
+        </div>
+        <div class="xuanze">
+            <div class="popup-trigger2">
+            	<a href="#bottomPopover" id="popup-trigger2">
+	                <span>选择产品参数</span>
+	                <i class="arrow-icon"></i>
+                </a>
+            </div>
+            <div class="goods_xq">
+                <span></span>
+                <span>产品详情</span>
+                <span></span>
+            </div>
+            <div class="goods_imgs">
+                <ul>
+                    <li>
+                        <img src="../../upload/banner4.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="goumai">
+            <p class="collet-btn">
+                <img src="../../images/wei_collect.png" alt="" class="wei_collect">
+                <img src="../../images/collect.png" class="collect" style="display: none;">
+                <span>收藏</span>            
+            </p>
+            <a href="javascript:void(0)" class="addcart" onclick="cart()">加入购物车
+            </a>
+            <a href="javascript:void(0)" onclick="shop()" class="btn-buy">立即购买</a>
+    </div>
+    </div>
+    <div id="bottomPopover" class="bottomPopover">
+    	<div class="relative">
+    		<div class="close" id="close1"></div>
+	        <div class="wrap1">
+	            <div class="left_top">
+	                <img src="../../upload/1541986348.jpg">
+	            </div>
+	            <div class="right_top">
+	                <p class="normal_credit">￥<span class="cash">0</span></p>
+	                <p>已选：</p>
+	                <p>
+	                    <span>可得GPX: <span class="yilian"></span></span>
+	                </p>
+	            </div>  
+	        </div>
+	        <div class="goumai_num">
+	            <span>购买数量</span>
+	            <form action="" method="post">
+	                <input type="button" value="-" id="jian" class="jian">
+	                <input type="text" value="1" id="val" onkeyup="this.value=this.value.replace(/\D/g,'')" class="num-inp">
+	                <input type="button" value="+"  id="jia" class="jia">
+	            </form>
+	        </div>
+	        <div class="wrap_wc">完成</div>
+        </div>
+    </div>
+    <script src="../../js/mui.js"></script>
+    <script src="../../js/openWin.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    	mui.init()
+    	document.getElementById("back").addEventListener("tap", function() {
+       		mui.back();
+		})
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+      	
+		document.getElementById("popup-trigger2").addEventListener("tap", function() {
+			console.log('133')
+					//调用隐藏/显示弹出层
+			mui("#bottomPopover").popover('toggle', document.getElementsByClassName('mui-active')[0]);
+		})
+		document.getElementById("close1").addEventListener("tap",function(e){
+			console.log('$22')
+			document.getElementById('bottomPopover').style.display='none';
+			document.getElementById('bottomPopover').classList.remove("mui-active");
+			/*找到父元素*/
+			var body=document.getElementsByTagName("body")[0];
+			/*找到子元素*/
+			var child=document.getElementsByClassName('mui-backdrop')[0];
+			body.removeChild(child);
+		})
+
+
+    </script>
+</body>
+</html>

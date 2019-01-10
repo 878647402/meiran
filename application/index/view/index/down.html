@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="misapplication-tap-highlight" content="no"/>
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>
+        <title></title>
+        <script src="/static/index/appBack/js/flex.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css" href="/static/index/appBack/css/base.css" />
+        <link href="/static/index/appBack/css/mui.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/static/index/appBack/css/login.css" />
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+        <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            // window.onload = function () {
+            //     if(isAndroid){
+            //         is_weixin()
+            //     }
+            //     if(isiOS){
+            //         window.location.href = 'https://www.pgyer.com/eJNx';
+            //     }
+            // }
+            function is_weixin() {
+                var ua = window.navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    $('.mask').show()
+                }else {
+                        window.location.href = 'http://mei.1zhigou.com/meiran.apk';
+
+
+                }
+            }
+            function zan() {
+                if(isAndroid){
+                     console.log(123)
+                    is_weixin();
+                }
+                 window.location.href = 'http://mei.1zhigou.com/meiran.apk';
+                 if(isiOS){
+                   
+                     window.location.href = 'https://www.pgyer.com/EseW';
+                 }
+            }
+        </script>
+        <style>
+            body{background-color: white;text-align: center;color: #144cb2;}
+            h1{
+                color: #144cb2;
+                font-weight: normal;
+                margin: 35px auto 20px auto;
+                font-size: 26px;
+            }
+            .download{
+                margin: 50px auto 20px;
+            width: 2rem;
+            height:2rem;
+                display: block;
+            }
+            h2{
+                font-size: 18px;
+                font-weight: normal;
+                margin-top: 35px;
+            }
+            p{font-size: 16px;color: #144CB2;margin-top: 10px;}
+            #confirmBtn{
+                margin: 50px;
+                width: calc(100% - 100px);
+            }
+            .mask{
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.6);
+                z-index: 11;
+                top: 0;
+                left: 0;
+                display: none;
+            }
+            .we-arrow{
+                position: absolute;
+                z-index: 15;
+                top: 0.2rem;
+                right: 0.5rem;
+                width: 80%;
+            }
+            .we-arrow img{
+                width: 50%;
+                float: right;
+            }
+            .wx-hint{
+                color: white;
+                margin: auto;
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                top: 3rem;
+                left: 0;
+                bottom: 0;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-header1">
+            <a href="javascript:history.back(-1)" class="return-icon mui-action-back">
+                <i></i>
+            </a>
+            <span class="center">注册会员</span>
+            <a href="javascript:void(0);" class="right"></a>
+        </div>
+        <div id="content" class="content">
+            <!--<h1>免费注册成功</h1>-->
+            <img class="download" src="/static/index/appBack/img/logo.jpg" />
+            <button id='confirmBtn' type="button" class="zhuce_btn" onclick="zan()">立即下载APP</button>
+        </div>
+        <div class="mask">
+            <div class="we-arrow">
+                <img src="/static/index/appBack/img/wx_arrow.png">
+            </div>
+            <p class="wx-hint">请点击右上角<br>选择“浏览器中打开”</p>
+        </div>
+    </body>
+</html>

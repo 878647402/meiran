@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/user.css" />
+    </head>
+<body>
+    <div class="main-header1">
+        <a href="javascript:history.go(-1)"" class="return-icon">
+            <i></i>
+        </a>
+        <span class="center">添加地址</span>
+        <a href="javascript:void(0);" class="right"></a>
+    </div>
+    <div class="main-content1">
+            <ul class="jhmjy_ul">
+                    <li>
+                        <p>收件人姓名</p>
+                        <input type="text" name="ad_name" id="" value="">
+                    </li>
+                    
+                    <li>
+                        <p>收件人电话</p>
+                        <input type="text" name="ad_tel" id="" value="">
+                        
+                    </li>
+                    <li>
+                        <p>收件人地址</p>
+                        <div class="city0">
+                            <select name="ad_province" class="province" onchange="province_change($(this).val())">
+                                <option value="">请选择省</option>
+                                <option name="ad_province" value="110000">北京市</option>
+                                <option name="ad_province" value="120000">天津市</option>
+                                <option name="ad_province" value="130000">河北省</option>
+                                <option name="ad_province" value="140000">山西省</option>
+                                <option name="ad_province" value="150000">内蒙古</option>
+                                <option name="ad_province" value="210000">辽宁省</option>
+                                <option name="ad_province" value="220000">吉林省</option>
+                                <option name="ad_province" value="230000">黑龙江</option>
+                                <option name="ad_province" value="310000">上海市</option>
+                                <option name="ad_province" value="320000">江苏省</option>
+                                <option name="ad_province" value="330000">浙江省</option>
+                                <option name="ad_province" value="340000">安徽省</option>
+                                <option name="ad_province" value="350000">福建省</option>
+                                <option name="ad_province" value="360000">江西省</option>
+                                <option name="ad_province" value="370000">山东省</option>
+                                <option name="ad_province" value="410000">河南省</option>
+                                <option name="ad_province" value="420000">湖北省</option>
+                                <option name="ad_province" value="430000">湖南省</option>
+                                <option name="ad_province" value="440000">广东省</option>
+                                <option name="ad_province" value="450000">广  西</option>
+                                <option name="ad_province" value="460000">海南省</option>
+                                <option name="ad_province" value="500000">重庆市</option>
+                                <option name="ad_province" value="510000">四川省</option>
+                                <option name="ad_province" value="520000">贵州省</option>
+                                <option name="ad_province" value="530000">云南省</option>
+                                <option name="ad_province" value="540000">西  藏</option>
+                                <option name="ad_province" value="610000">陕西省</option>
+                                <option name="ad_province" value="620000">甘肃省</option>
+                                <option name="ad_province" value="630000">青海省</option>
+                                <option name="ad_province" value="640000">宁  夏</option>
+                                <option name="ad_province" value="650000">新  疆</option>
+                                <option name="ad_province" value="710000">台湾省</option>
+                                <option name="ad_province" value="810000">香  港</option>
+                                <option name="ad_province" value="820000">澳  门</option>
+                            </select>
+                            <select name="ad_city" class="city" onchange="city_change($(this).val())" style="">
+                            </select>
+                            <select name="ad_area" class="area" style="">
+                        
+                            </select>
+                        </div>
+                        <textarea name="ad_stree" rows="" cols="" placeholder="请输入街道具体位置"></textarea>
+                    </li>
+                    <li>
+                        <input type="submit" onclick="return ti()" value="提交" class="user_submit">
+                    </li>
+                </ul>
+    </div>
+</body>

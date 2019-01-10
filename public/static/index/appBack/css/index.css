@@ -1,0 +1,295 @@
+/*index*/
+/*搜索*/
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
+.search{width: 100%;height: 0.88rem;position: fixed;z-index: 11;top: 0;background: white;padding: 0.11rem 0;}
+.search_logo{text-align: center;width: 1.08rem;height: 100%;margin:0 0.2rem 0 0.3rem;}
+.search_logo img{width: 1.08rem;height: 0.44rem;position: relative;top: 0.12rem;}
+.search_input input{width: 5rem;height: 0.66rem;outline:none;border:0;border-radius: 0.34rem;padding-left: 0.78rem;    background: url(../images/search.png) 0.2rem center no-repeat;background-color: #ededed;background-size: .38rem .38rem;font-size: .32rem;}
+.search_message{margin-left: 0.22rem;height: 0.66rem;width: 0.44rem;}
+.search_message img{width: 0.44rem;display: block;position: relative;top: 0.12rem;}
+.swiper-pagination-bullet{background:#cecece;width: 0.1rem;height: 0.1rem;}
+.swiper-pagination-bullet-active{background: #a63533;border: 0;}
+.swiper-container {width: 100%;height: 3.56rem;}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 0px;}
+/*新闻*/
+.news{width: 100%;height: 0.66rem;background: white;padding: 0.18rem 0;font-size: 0.24rem;font-size: 0.24rem;border-top: solid 1px #eeeeee;border-bottom: solid 1px #EEEEEE;}
+.news_logo{width: 0.39rem;margin-left: 0.23rem;}
+.news_logo img{width: 0.39rem;position: relative;top: -0.07rem;}
+.news_list{color: #000;padding:0 0.2rem 0 0.2rem;width: calc(100% - 0.8rem);overflow: hidden;text-overflow:ellipsis;white-space: nowrap;height: 14px;line-height:14px;}
+.news_list .swiper-slide{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+
+/*分类*/
+.classify{width: 100%;height: 2.4rem;background: white;padding:0.4rem 0 0.46rem 0;}
+.classify ul{display: flex;justify-content: space-around;}
+.classify ul li{width: 1.2rem;height: 100%;text-align: center}
+.classify_top{width: 0.88rem;height: 0.88rem;border-radius: 100%;background: #f2f2f2;text-align: center;vertical-align: middle;margin: auto;}
+.food{width: 0.6rem;height: 0.56rem;}
+.skin{width: 0.25rem;height: 0.65rem;}
+.furniture{width: 0.63rem;height: 0.63rem;}
+.commodity{width: 0.63rem;height: 0.61rem;}
+.health{width: 0.56rem;height: 0.54rem;top: -0.32rem !important;display: block;}
+.classify_bottom{text-align: center;font-size: 0.26rem;line-height: 0.26rem;margin-top: 0.32rem;color: #0b0909;display: block;}
+.product .section_title{height: 0.88rem;line-height: 0.88rem;font-size: 0.32rem;font-weight:bold;color: #0b0808;padding-left: 0.72rem;background: url(../images/title.png) no-repeat;background-size: 0.28rem;background-position: 0.27rem;border-bottom: solid 1px #eeeeee;}
+.section_title img{width: 0.16rem;height: 0.3rem;margin-right: 0.3rem;margin-top: 0.3rem;}
+/* 化妆品头部 */
+.index-header{
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	background: #FFFFFF;
+	border-bottom: 1px solid #eee;
+}
+.banner{
+	width: 100%;
+	height: 3.56rem;
+}
+.banner img{
+	width: 100%;
+	height: 3.56rem;
+	background-size: contain;
+}
+.process-tip{
+	margin-top: .1rem;
+	/*height: 1.3rem;*/
+}
+.search-header{
+	width: 100%;
+    height: 1rem;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    padding: 0.14rem 0;
+    background: white;
+    border-bottom: solid 1px #EEEEEE;
+}
+.search-header .back{
+	box-sizing: content-box;
+	width: 0.18rem;
+    height: 0.24rem;
+    display: block;
+    padding: 0.2rem 0.22rem .2rem .28rem;
+}
+.search-header .search_submit {
+    cursor: pointer;
+    text-align: center;
+    float: left;
+    margin-left: 0.26rem;
+    font-size: 0.28rem;
+    line-height: 0.66rem;
+    height: 100%;
+    color: #343434;
+}
+.search-header .search_input {
+    height: 100%;
+    width: 5.8rem;
+    outline: none;
+    border: 0;
+    background: #EDEDED;
+    border-radius: 0.33rem;
+    padding-left: 0.77rem;
+    background: url('../images/search.png') no-repeat;
+    background-color: #ededed;
+    background-position: 0.26rem;
+    background-size: 0.38rem;
+    font-size: 0.28rem;
+    color: #343434;
+}
+.vip-rank li{
+    display: block;
+    width: 49.3%;
+    float: left;
+    height: 0;
+    padding-bottom: 36%;
+    overflow: hidden;
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    border-bottom: solid 0.1rem #f3f3f3;
+    padding-left: 0.15rem;
+}
+.vip-rank li:nth-child(1),.vip-rank li:nth-child(3){
+    border-right:solid 0.1rem #f3f3f3;
+}
+.vip-rank li a{
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 76%;
+}
+.vip-rank li h1{
+    font-size:0.37rem;
+    color: #0b0808;
+    display: block;
+    float: left;
+    line-height: 0.37rem;
+    margin-top: 0.27rem;
+}
+.vip-rank li p{
+    font-size: 0.24rem;
+    display: block;
+    float: left;
+    color: #666;
+    line-height: 0.24rem;
+    margin-top: 0.1rem;
+}
+.vip-rank li span{
+    color: #fc0000;
+    font-size: 0.24rem;
+    line-height: 0.26rem;
+    margin-top: 0.1rem;
+    float: left;
+}
+.vip-rank li s{
+    float: left;
+    color: #9c9c9c;
+    font-size: 0.26rem;
+    line-height: 0.26rem;
+    margin-top: 0.1rem;
+}
+.li-hot{
+    display: block;
+    width: 0.75rem;
+    height: 0.3rem;
+    line-height: 0.28rem !important;
+    border-radius: 15px;
+    border:solid 1px #fc0000;
+    text-align: center;
+    margin-top: 0.15rem;
+}
+.home_logo {
+    width: 54px;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+.search_container {
+    flex: 1;
+    border-radius: 16px;
+    height: 34px;
+    padding-left: 38.5px;
+    font-size: 14px;
+    line-height: 34px;
+    background-color: #ededed;
+    background-image: url(http://www.yilian360.com/static/img/search.png);
+    background-repeat: no-repeat;
+    background-size: 19px;
+    background-position: 14px;
+    color: #999;
+}
+.home_message {
+    width: 22px;
+    margin: 0 12px;
+}
+.home_message img{
+	display: block;
+}
+
+.img-wrapper {
+    width: 1.38rem;
+    height: 1.38rem;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.list-desc {
+    float: left;
+    margin-left: 0.25rem;
+    flex: 1;
+    position: relative;
+}
+.desc-tag {
+    width: 0.48rem;
+    height: 0.57rem;
+    position: absolute;
+    right: 0;
+    top: -0.28rem;
+    background:url(http://www.yilian360.com/static/img/shop-tag.png) no-repeat;
+    background-size: 100%;
+    color: white;
+    font-size: 0.2rem;
+    padding: 0.21rem 0 0 0.02rem;
+}
+.desc-title {
+    display: block;
+    width: 4rem;
+    height: 0.3rem;
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    margin-top: 0.08rem;
+    color: #494949;
+}
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.presence {
+    font-size: 0.26rem;
+    line-height: 0.26rem;
+    margin-top: 0.2rem;
+    color: #9f9f9f;
+}
+.address-cont {
+    display: block;
+    width: 100%;
+    font-size: 0.26rem;
+    color: #5d5d5d;
+    line-height: 0.26rem;
+    height: 0.26rem;
+    margin-top: 0.25rem;
+}
+.desc-address {
+    float: left;
+    width: 4rem;
+    height: 0.26rem;
+    line-height: 0.26rem;
+}
+.distance {
+    float: right;
+}
+.mui-slider-indicator .mui-active.mui-indicator{
+	background: #a63533;
+}
+.module-wrap{
+	background: #FFFFFF;
+	margin-top: .1rem;
+}
+.module-wrap li{
+	float: left;
+	width: 50%;
+	border-bottom: 1px solid #d6d7dc;
+	border-right: 1px solid #d6d7dc;
+	padding: .2rem .2rem .2rem;
+}
+.module-wrap li:nth-child(even){
+	border-right: 0;
+}
+.module-wrap li:nth-child(3){
+	border-bottom: 0;
+}
+.module-wrap li:nth-child(4){
+	border-bottom: 0;
+}
+.module-wrap li span.title1{
+	color: #e867cb;
+	font-size: .32rem;
+	display: block;
+	margin-bottom: .14rem;
+}
+.module-wrap li .mark-img-box{
+	display: flex;
+	justify-content: space-around;
+}
+.module-wrap li .mark-img-box img{
+	width:1.12rem;
+	height: .96rem;
+	background-size: contain;
+}
+

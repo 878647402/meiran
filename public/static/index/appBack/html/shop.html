@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/merchant.css">
+		<link rel="stylesheet" href="../css/index.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+		
+	</head>
+	<body>
+		<header class="index-header"><span>商城</span></header> 
+		<div class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item"><img src="../upload/banner4.png" /></div> 
+				<div class="mui-slider-item"><img src="../upload/banner5.png" /></div>  
+				<div class="mui-slider-item mui-slider-item-duplicate"><img src="../upload/banner4.png"></div>
+				</div>
+				<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+				</div>
+		</div>
+		<div class="product" style="margin-top:.2rem;">
+				<ul class="clearfix">
+						<li>
+							<a href="shop/shopDetail.html">
+									<img class="product_top" src="../upload/shop1.jpg">
+									<p class="product_title">蛋白肽水光动力组合正品钒钛微晶水光套盒无针水光产品套盒耗材 </p>
+									<p class="product_price">
+											<span class="rmb">￥</span>398.00<s class="cost">439.00</s>
+									</p>
+										
+							</a>
+						</li>
+						<li>
+							<a href="shop/shopDetail.html">
+									<img class="product_top" src="../upload/shop2.png">
+									<p class="product_title">美容院专业眼部护理套装组合 水光针精华眼霜护理液精油去眼袋</p>
+									<p class="product_price">
+											<span class="rmb">￥</span>1280.00<s class="cost">1880.00</s>
+									</p>
+								
+											
+							</a>
+						</li>
+				
+				</ul>
+		</div>
+		<nav class="mui-bar mui-bar-tab footer-nav" id="nav">
+			<a class="mui-tab-item mui-active" href="../home.html">
+				<span class="foot_top home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="shareCode.html">
+				<span class="foot_top code"></span>
+				<span class="mui-tab-label">分享二维码</span>
+			</a>
+			<a class="mui-tab-item">
+				<span class="foot_top  store"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="mui-tab-item" href="user.html">
+				<span class="foot_top mine"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/openWin.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.js"></script>
+		<script type="text/javascript">
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+			interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		</script>
+	</body>
+</html>

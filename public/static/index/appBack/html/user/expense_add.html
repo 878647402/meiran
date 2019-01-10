@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/user.css" />
+    </head>
+    <body>
+        <div class="main-content1">
+                <div class="apply_community">
+                     <img class="general-logo" src="http://www.yilian360.com/static/img/login-logo.png">
+                        <h1 class="community_title">消费增值&nbsp;分享红利</h1>
+                        <img class="general-hr" src="http://www.yilian360.com/static/img/general-hr.png">
+                        <h1 style="font-size: 0.34rem;margin-top: 0.35rem">打破原有商业分配体系</h1>
+                        <h3 style="width:4.3rem;line-height: 0.45rem;font-size: 0.26rem;background-color: #915e54;color: #fff;margin:0.3rem auto 0.2rem auto;">小苹果创业平台助你财富逆袭</h3>
+                        <div class="arrow-icon1"></div>
+                </div>
+                <div class="district_general">
+                    <ul>
+                        <li>
+                            <div class="menu-box">
+                                <p class="district_title">一、苹果种子（免费注册）</p>
+                                <span class="click_open">查看详情</span>
+                            </div>
+                            <p class="hide_news">
+                                1.获自身N次消费商品不等的小苹果奖励
+                            </p>
+                        </li>
+                        <li>
+                            <div class="menu-box">
+                                <p class="district_title">二、园丁（分享专区消费398元）</p>
+                                <span class="click_open">查看详情</span>
+                            </div>
+                            <p class="hide_news">
+                                1.获自身N次消费商品不等的小苹果奖励<br>
+                                2.可获被分享人在分享专区消费商品的25%小苹果奖励<br>
+                                3.可获被分享人在其他专区（除厂家专区外）消费商品不等的小苹果奖励<br>
+                                4.可获被分享人总收益的60%小苹果奖励<br>
+                                5.分享体验中心可获10%奖励
+                            </p>
+                        </li>
+                        <li>
+                            <div class="menu-box">
+                                <p class="district_title">三、园长（分享专区消费1680元）</p>
+                                <span class="click_open">查看详情</span>
+                            </div>
+            
+                            <p class="hide_news">
+                                1.获自身N次消费商品不等的小苹果奖励<br>
+                                2.可获被分享人在分享专区消费商品的25%小苹果奖励<br>
+                                3.可获被分享人在其他专区（除厂家专区外）消费商品不等的小苹果奖励<br>
+                                4.可获被分享人总收益的60%小苹果奖励<br>
+                                5.分享体验中心可获10%奖励，同时获得体验中心N次进货额的1%奖励
+                            </p>
+                    </li>
+                    </ul>
+                    <!-- <a class="apply-vip" href="/mall/index/home.html?cate=23">立即购买</a> -->
+                    <calss class="apply-vip" id="info">申请代理</calss>
+                </div>
+                
+        </div>
+        <script src="../../js/mui.min.js"></script>
+        <script src="../../js/jquery-3.3.1.min.js"></script>
+        <script src="../../js/fastclick.js"></script>
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
+            mui.init({
+				swipeBack:true //启用右滑关闭功能
+            });
+            var details = document.getElementsByClassName('click_open');
+            var hideNews = document.getElementsByClassName('hide_news');
+            $('.click_open').on('click',function(){
+                console.log(123)
+                var that = $(this);
+                if(that.hasClass('open')){
+                    that.parents('li').find('.hide_news').hide();
+                    that.html('查看详情');
+                    that.removeClass('open');
+                    console.log(100)
+                }else {               
+                    $('.hide_news').hide();
+                    $('.click_open').html('查看详情');
+                    $('.click_open').removeClass('open');
+                    that.html('点击收起');
+                    that.addClass('open');
+                    that.parents('li').find('.hide_news').show();
+                    console.log(133)
+                }
+               
+            })
+        </script>
+        
+    </body>
+</html>

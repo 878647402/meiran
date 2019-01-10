@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+	    <link href="../../css/mui.css" rel="stylesheet" />
+	    <link rel="stylesheet" href="../../css/base.css">
+	    <link rel="stylesheet" href="../../css/merchant.css">
+	</head>
+	<body>
+		<div class="main-header1">
+            <a href="/mall/user/index.html" class="return-icon">
+                <i></i>
+            </a>
+            <span class="center">确定订单</span>
+            <a href="javascript:void(0);" class="right"></a>
+        </div>
+        <div class="main-content1">
+        	<div class="payment">
+				<p>付款给小苹果<span>跟商家确定好金额之后输入</span></p>
+				<div class="payment-input">
+					<span>消费金额</span><span class="input-container">￥</span><input oninput="number()" step="0.01" name="money" type="number" pattern="\d*" value="">
+				</div>
+				<div class="hint">赠送<span>0</span>小苹果</div>
+				<input type="hidden" name="shop_id" value="1">
+				<input type="hidden" name="shop_name" value="小苹果">
+			</div>
+        </div>
+	</body>
+</html>

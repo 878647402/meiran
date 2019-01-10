@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+    <link href="../../css/mui.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/login.css" />
+</head>
+<body class="reg-body">
+        <div class="main-header1">
+            <a href="/mall/user/index.html" class="return-icon">
+                <i></i>
+            </a>
+            <span class="center">忘记密码</span>
+            <a href="javascript:void(0);" class="right"></a>
+        </div>
+        <div class="main-content1">
+            <ul class="zhuce_wrap">
+                <li>
+                    <input type="text" name="us_name" placeholder="请输入用户名">
+                    <img src="../../images/tuijianren.png">
+                </li>
+                <li>
+                    <input type="text" name="us_tel" id="phone" placeholder="请输入手机号" class="yzm">
+                    <img src="../../images/phone.png">
+                    
+                </li>
+                <li>
+                    <input type="password" name="us_pwd" placeholder="请输入密码">
+                    <img src="../../images/pass.png">
+                </li>
+                <li>
+                    <input type="password" name="pass1" placeholder="请再次输入密码">
+                    <img src="../../images/pass.png">
+                </li>
+                <li>
+                    <input type="text" placeholder="请输入验证码" name="note_code" class="code_input">
+                    <img src="../../images/yzm.png">
+                    
+                    <button type="button" class="gain">获取验证码</button>
+                </li>
+            </ul>
+            <input type="submit" id="submit" onclick="return forget()" value="确定" class="zhuce_btn">
+        </div>
+</body>
+</html>

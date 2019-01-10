@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/login.css">
+    </head>
+    <body class="login-body">
+			<div class="main-header1">
+				<span class="center">登录</span>
+				<a href="javascript:void(0);" class="right"></a>
+			</div>
+        <div class="bgcolor">
+            <div class="logo-img"></div>
+            <div class="login-form">
+                <form action="" method="POST">
+                    <input name="phone" type="text" placeholder="手机号">
+                    <input name="password"  type="password" placeholder="密码">
+                    <input type="submit" value="登录">
+                </form>
+                <div class="wjmm">
+                    <a href="reg.html">注册</a><a href="">忘记密码?</a>
+                </div>
+            </div>
+            <div class="down-load">
+                
+            </div>
+        </div>
+				<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+				<script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+				<script type="text/javascript">
+					$('#submit').on('click',function(){
+							$.ajax({
+								type:'post',
+								url:"http://192.168.0.117:81/index/login/index",
+								data:$('form').serialize(),
+								success:function(data){
+									
+								}
+							})
+					})
+       
+    </body>

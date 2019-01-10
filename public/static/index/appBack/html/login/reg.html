@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/login.css" />
+    </head>
+    <body class="reg-body">
+        <div class="main-header1">
+            <a href="javascript:history.back(-1)" class="return-icon mui-action-back">
+                <i></i>
+            </a>
+            <span class="center">注册会员</span>
+            <a href="javascript:void(0);" class="right"></a>
+        </div>
+        <div class="main-content1">
+					<form>
+                <ul class="zhuce_wrap">
+                    <li>
+                        <input type="text" name="us_name" placeholder="请输入用户名">
+                        <img src="../../images/tuijianren.png">
+                    </li>
+                    <li>
+                        <input type="text" name="us_tel" id="phone" placeholder="请输入手机号" class="yzm">
+                        <img src="../../img/phone.png">
+                    </li>
+                    <li>
+                        <input type="password" name="us_pwd" placeholder="请输入密码">
+                        <img src="../../images/pass.png">
+                    </li>
+                    <li>
+                        <input type="password" name="us_pwd_confirm" placeholder="请再次输入密码">
+                        <img src="../../images/pass.png">
+                    </li>
+                    <li>
+                        <input type="text" value="空" name="tname" placeholder="推荐人">
+                        <img src="../../images/tuijianren.png">
+                    </li>
+                   <li>
+                        <input type="text" placeholder="请输入验证码" name="note_code" class="code_input">
+                        <img src="../../images/yzm.png">
+                        
+                        <button type="button" class="gain">获取验证码</button>
+                    </li>
+                </ul>
+							</form>
+                <input type="submit" id="submit" value="注册" class="zhuce_btn">
+								<div class="login-b"><a href="login.html" id="login.html" onclick="openwin(this.id)">已有账号去登录</a></div>
+        </div>
+				<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+				<script src="../../js/openWin.js"></script>
+				<script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+				<script type="text/javascript">
+					$('#submit').on('click',function(){
+							$.ajax({
+								type:'post',
+								url:"http://192.168.0.117:81/index/login/register",
+								data:$('form').serialize(),
+								success:function(data){
+									var datas = JSON.parse(data)
+									if(data.code!=1){
+										mui.toast(datas.msg)
+									}else{
+										mui.toast(datas.msg)
+									}
+									console.log(JSON.parse(data))
+								}
+							})
+					})
+					
+				</script>
+        
+    </body>
+</html>

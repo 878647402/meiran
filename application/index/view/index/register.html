@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="/static/index/appBack/js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/static/index/appBack/css/base.css" />
+		<link href="/static/index/appBack/css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/static/index/appBack/css/login.css" />
+    </head>
+    <body class="reg-body">
+        <div class="main-header1">
+            <a href="javascript:history.back(-1)" class="return-icon mui-action-back">
+                <i></i>
+            </a>
+            <span class="center">注册会员</span>
+            <a href="javascript:void(0);" class="right"></a>
+        </div>
+        <div class="main-content1">
+					<form>
+                <ul class="zhuce_wrap">
+                    <li>
+                        <input type="text" name="us_name" placeholder="请输入用户名">
+                        <img src="/static/index/appBack/images/tuijianren.png">
+                    </li>
+                    <li>
+                        <input type="text" name="us_tel" id="phone" placeholder="请输入手机号" class="yzm">
+                        <img src="/static/index/appBack/img/phone.png">
+                    </li>
+                    <li>
+                        <input type="password" name="us_pwd" placeholder="请输入密码">
+                        <img src="/static/index/appBack/images/pass.png">
+                    </li>
+                    <li>
+                        <input type="password" name="us_pwd_confirm" placeholder="请再次输入密码">
+                        <img src="/static/index/appBack/images/pass.png">
+                    </li>
+                    <li>
+                        <input type="text" value="{$tell|default=''}" name="tname" placeholder="推荐人" maxlength="11">
+                        <img src="/static/index/appBack/images/tuijianren.png">
+                    </li>
+                   <li>
+                        <input type="text" placeholder="请输入验证码" name="note_code" class="code_input">
+                        <img src="/static/index/appBack/images/yzm.png">
+                        
+                        <button type="button" class="gain" id="yzm">获取验证码</button>
+                    </li>
+                </ul>
+							</form>
+                <input type="submit" id="submit" value="注册" class="zhuce_btn">
+				<a href="{:url('down')}" style="line-height:.8rem" class="zhuce_btn">下载APP</a>				 
+        </div>
+<script src="/static/index/appBack/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/index/appBack/js/openWin.js"></script>
+<script src="/static/index/appBack/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$('#submit').on('click',function(){
+			$.ajax({
+				type:'post',
+				url:"{:url('/index/login/register')}",
+				data:$('form').serialize(),
+				success:function(data){
+					var datas = JSON.parse(data)
+					mui.toast(datas.msg)
+                    if(data.code){
+                        //tiao
+					}
+					console.log(JSON.parse(data))
+				}
+			})
+	})
+	$('#yzm').click(function(){
+        phone = $('#phone').val();
+        if (phone) {
+            $.post("{:url('sms')}",{phone:phone},function(data){
+                datas = JSON.parse(data)
+                mui.toast(datas.msg);
+            });
+        } else {
+            mui.toast('请输入手机号');
+        }
+    })
+</script>
+        
+    </body>
+</html>

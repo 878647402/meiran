@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/static/admin/css/style.css"/>       
+        <link href="/static/admin/assets/css/codemirror.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/admin/assets/css/ace.min.css" />
+        <link rel="stylesheet" href="/static/admin/assets/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="/static/admin/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+        <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/static/admin/assets/css/ace-ie.min.css" />
+		<![endif]-->
+			<script src="/static/admin/assets/js/jquery.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="/static/admin/http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="/static/admin/assets/js/bootstrap.min.js"></script>
+		<script src="/static/admin/assets/js/typeahead-bs2.min.js"></script>
+		<!-- page specific plugin scripts -->
+		<script src="/static/admin/assets/js/jquery.dataTables.min.js"></script>
+		<script src="/static/admin/assets/js/jquery.dataTables.bootstrap.js"></script>
+        <script type="text/javascript" src="/static/admin/js/H-ui.js"></script> 
+        <script type="text/javascript" src="/static/admin/js/H-ui.admin.js"></script> 
+        <script src="/static/admin/assets/layer/layer.js" type="text/javascript" ></script>
+        <script src="/static/admin/assets/laydate/laydate.js" type="text/javascript"></script>
+<title>用户列表</title>
+</head>
+
+<body>
+<div class="page-content clearfix">
+    <div id="Member_Ratings">
+      <div class="d_Confirm_Order_style">
+    <div class="search_style">
+     
+      <ul class="search_content clearfix" style="display: none">
+       <li><label class="l_f">会员名称</label><input name="" type="text"  class="text_add" placeholder="输入会员名称、电话、邮箱"  style=" width:400px"/></li>
+       <li><label class="l_f">添加时间</label><input class="inline laydate-icon" id="start" style=" margin-left:10px;"></li>
+       <li style="width:90px;"><button type="button" class="btn_search"><i class="icon-search"></i>查询</button></li>
+      </ul>
+    </div>
+     <!---->
+     <div class="border clearfix">
+       <!-- <span class="l_f">
+        <a href="{:url('listAdd')}" id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加用户</a>
+        <a href="javascript:;" id="administrator_del"  class="btn btn-danger"><i class="icon-trash"></i>批量删除</a>
+       </span> -->
+       <span class="r_f">共：<b>{$count}</b>条</span>
+     </div>
+     <!---->
+     <div class="table_menu_list">
+       <table class="table table-striped table-bordered table-hover" id="sample-table">
+		<thead>
+		 <tr>
+				<th width="25"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
+				<th width="40">ID</th>
+        <th width="40">用户名</th>
+        <th width="40">产品名</th>
+				<th width="100">订单编号</th>
+        <th width="40">单价</th>
+        <th width="40">数量</th>
+        <th width="40">总价</th>
+        <th width="60">订单时间</th>
+        <!-- 
+        <th width="40">新品</th>
+        <th width="40">热卖</th> -->
+        <th width="100">地址</th>
+				<th width="70">状态</th>                
+				<th width="120">操作</th>
+			</tr>
+		</thead>
+	<tbody>
+    {volist name="list" id="v"}
+    <tr>
+          <td><label><input type="checkbox" class="ace" name='text' value="{$v.id}"><span class="lbl"></span></label></td>
+          <td>{$v.id}</td>
+          <td>{$v.user.us_name}</td>
+          <td onclick="addr(this)" title="{$v.product.pd_name}">{:substr($v.product.pd_name,0,12)}...</td>
+          <td>{$v.order_number}</td>
+          <td>{$v.product.pd_discount}</td>
+          <td>{$v.sum}</td>
+          <td>{$v.sum * $v.product.pd_discount}</td>
+          <td>{$v.create_time}</td> 
+          <td onclick="addr(this)" title="{$v.addr}">{:substr($v.addr,0,21)}...</td> 
+          <td class="td-status">
+          {if $v.status==2}
+          <span class="label label-success radius">已发货</span>
+           {elseif $v.status==1}
+           <span class="label label-defaunt radius">未发货</span>
+          {elseif $v.status==3}
+          <span class="label label-success radius">已完成</span>
+           {else}
+           <span>未付款</span>
+           {/if}
+           
+          </td>
+          <td class="td-manage">
+          {if $v.status==2}
+            <a onclick="member_stop(this,{$v.id},1,'list')"  href="javascript:;" title="发货"  class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></a> 
+          {elseif $v.status==1}
+            <a onclick="member_start(this,{$v.id},2,'list')"  href="javascript:;" title="取消发货"  class="btn btn-xs btn-error"><i class="icon-check bigger-120"></i></a> 
+          {elseif $v.status==3}
+           {else}
+          {/if}
+          
+          <!-- <a title="编辑" onclick="member_edit({$v.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>  -->
+          <a title="删除" href="javascript:;"  onclick="member_del(this,{$v.id},'list')" class="btn btn-xs btn-warning" ><i class="icon-trash  bigger-120"></i></a>
+          </td>
+		</tr>
+    {/volist}
+      </tbody>
+	</table>
+   </div>
+  </div>
+ </div>
+</div>
+<!--添加用户图层-->
+<!-- <div class="add_menber" id="add_menber_style" style="display:none">
+  <form>
+    <ul class=" page-content" >
+     <li><label class="label_name">产品名字：</label><span class="add_name">
+      <input value="" name="pd_name" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+        <li><label class="label_name">原价格：</label><span class="add_name">
+          <input value="" name="pd_price" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">库存：</label><span class="add_name">
+      <input value="" name="pd_store" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">现价格：</label><span class="add_name">
+      <input value="" name="pd_discount" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">销量：</label><span class="add_name">
+      <input value="" name="order" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+
+     <li><label class="label_name">已售出：</label><span class="add_name">
+      <input value="" name="order" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">热卖：</label><span class="add_name">
+      <input value="" name="new" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+      <li><label class="label_name">新品：</label><span class="add_name">
+        <input value="" name="hot" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+        <li><label class="label_name">描述：</label><span class="add_name">
+        <input value="" name="desc" type="text" style="width: 250px" /></span><div class="prompt r_f"></div></li>
+    </ul>
+    </form> 
+ </div>-->
+</body>
+</html>
+<script>
+jQuery(function($) {
+		var oTable1 = $('#sample-table').dataTable( {
+		"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+		"bStateSave": true,//状态保存
+		"aoColumnDefs": [
+		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+		  {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
+		] } );
+				
+				
+				$('table th input:checkbox').on('click' , function(){
+					var that = this;
+					$(this).closest('table').find('tr > td:first-child input:checkbox')
+					.each(function(){
+						this.checked = that.checked;
+						$(this).closest('tr').toggleClass('selected');
+					});
+						
+				});
+			
+			
+				$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+				function tooltip_placement(context, source) {
+					var $source = $(source);
+					var $parent = $source.closest('table')
+					var off1 = $parent.offset();
+					var w1 = $parent.width();
+			
+					var off2 = $source.offset();
+					var w2 = $source.width();
+			
+					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+					return 'left';
+				}
+})
+ function addr(obj){
+    layer.msg($(obj).attr('title'),{time: 5000, icon:7})
+ }
+/*用户-查看*/
+function member_show(title,url,id,w,h){
+	layer_show(title,url+'?id='+id,w,h);
+}
+/*用户-发货*/
+function member_stop(obj,id,status,table){
+  layer.confirm('确认要取消发货吗？',function(index){
+    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,'+id+',2,\''+table+'\')" href="javascript:;" title="取消发货"><i class="icon-check bigger-120"></i></a>');
+    $.post("{:url('listStatus')}",{id:id,table:table,status:status},function(data){
+      if (data.code) {
+        $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已取消发货</span>');
+        $(obj).parents("tr").remove();
+        $(obj).remove();
+        layer.msg('已取消发货',{icon: 5,time:1000});
+      }
+    });
+    
+     
+  });
+}
+/*用户-取消发货*/
+function member_start(obj,id,status,table){
+  layer.confirm('确认要发货吗？',function(index){
+    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,'+id+',1,\''+table+'\')" href="javascript:;" title="发货"><i class="icon-ok bigger-120"></i></a>');
+    $.post("{:url('listStatus')}",{id:id,table:table,status:status},function(data){
+      if (data.code) {
+        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发货</span>');
+        $(obj).parents("tr").remove();
+        $(obj).remove();
+        layer.msg('已发货!',{icon: 6,time:1000});
+      }
+    });
+    
+  });
+}
+
+/*产品-删除*/
+function member_del(obj,id,table){
+  layer.confirm('确认要删除吗？',function(index){
+    $.post("{:url('listDelete')}",{id:id,table:table},function(data){
+      if (data.code) {
+        $(obj).parents("tr").remove();
+        layer.msg('已删除!',{icon:1,time:1000});
+      }
+    });
+  });
+}
+/*产品-批量删除
+$('#administrator_del').click(function(){
+  layer.confirm('你确定删除选中的吗?', {
+    btn: ['确定','取消'] //按钮
+  }, function(){
+    obj = $("input[name='text']");
+      v = [];
+      for(k in obj){
+         if(obj[k].checked)
+             v.push(obj[k].value);
+      }
+      $.post("{:url('listDeleteAll')}",{v:JSON.stringify(v)},function(data){
+        layer.msg(data.msg);
+        if (data.code) {
+          layer.msg(data.msg, {icon: data.msg,time: 1500}, function(){ 
+                      location.reload();//刷新页面 
+                     });  
+        }
+     });
+  });
+});*/
+/*用户-编辑
+function member_edit(id){
+  $.post("{:url('list')}",{id:id},function(data){
+      $('input[name="pd_price"]').val(data.pd_price);
+      $('input[name="pd_name"]').val(data.pd_name);
+      $('input[name="pd_discount"]').val(data.pd_discount);
+      $('input[name="pd_detail"]').val(data.pd_detail);
+      $('input[name="pd_store"]').val(data.pd_store);
+      $('input[name="order"]').val(data.order);
+      $('input[name="new"]').val(data.new);
+      $('input[name="hot"]').val(data.hot);
+      $('input[name="desc"]').val(data.desc);
+  })
+
+    layer.open({
+        type: 1,
+        title: '修改用户信息',
+    maxmin: true, 
+    shadeClose:false, //点击遮罩关闭层
+        area : ['800px' , ''],
+        content:$('#add_menber_style'),
+    btn:['提交','取消'],
+    yes:function(index,layero){ 
+     var num=0;
+     var str="";
+     $(".add_menber input[type$='text']").each(function(n){
+          if($(this).val()=="")
+          {
+               
+         layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                title: '提示框',       
+        icon:0,               
+          }); 
+        num++;
+            return false;            
+          } 
+     });
+      if(num>0){  return false;}    
+          else{
+            $.post('{:url("listUpdate")}',{},function(data){})
+      //   layer.alert('添加成功！',{
+   //             title: '提示框',       
+      // icon:1,    
+      //   });
+      //    layer.close(index); 
+      }                     
+    }
+    });
+}
+ */
+</script>

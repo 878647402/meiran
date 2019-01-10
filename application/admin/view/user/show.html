@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+ <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/static/admin/css/style.css"/>       
+        <link href="/static/admin/assets/css/codemirror.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/admin/assets/css/ace.min.css" />
+        <link rel="stylesheet" href="/static/admin/assets/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="/static/admin/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+        <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/static/admin/assets/css/ace-ie.min.css" />
+		<![endif]-->
+			<script src="/static/admin/assets/js/jquery.min.js"></script>
+            <title>用户查看</title>
+</head>
+<body>
+<div class="member_show" >
+<div class="member_jbxx clearfix" >
+  <img class="img" src="/static/index/userHeader/{$user->us_img}">
+  <dl  class="right_xxln">
+  <dt><span class="">{$user->us_name}</span>&nbsp; &nbsp; &nbsp; <span class="">积分：{$user->wallet}</span></dt>
+  <dd class="" style="margin-left:0"></dd>
+  </dl>
+</div>
+<div class="member_content">
+  <ul>
+ 
+   <li><label class="label_name">手机：</label><span class="name">{$user->us_tell}</span></li>
+   <li><label class="label_name">积分：</label><span class="name">{$user->wallet}</span></li>
+   <li><label class="label_name">等级：</label><span class="name">{$user->level_text}</span></li>
+   <li><label class="label_name">推荐人：</label><span class="name">{$user.referrer_name}</span></li>
+   <li><label class="label_name">推荐手机：</label><span class="name">{$user.referrer_tell}</span></li>
+   <li><label class="label_name">注册时间：</label><span class="name">{$user->create_time}</span></li>
+   <p style="text-align: center; color: green">我直接推荐的人</p>
+   {volist name="re" id="v"}
+   <li><label class="label_name">我推荐的人:</label><span class="name" style="color: red;width: 200px">{$v.us_name} ： {$v.us_tell}</span></li>
+   {/volist}
+   <hr>
+   <p style="text-align: center;  color: green">我推荐人的推荐人</p>
+   {volist name="all" id="va"}
+   <li><label class="label_name">我的间接人:</label><span class="name" style="color: red;width: 200px">{$va.us_name} ： {$va.us_tell}</span></li>
+   {/volist}
+   <hr><p style="text-align: center;  color: green">视图一个--->代表一级</p>
+   {$html}
+   <br>
+   <br>
+   <br>
+  </ul>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../js/flex.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/index.css">
+		<link rel="stylesheet" href="../css/swiper.min.css">
+		
+	</head>
+	<body>
+		<div class="index-header">
+			<span>商城</span>
+		</div>
+		<div class="mui-content" id="content">
+			<div class="mui-slider banner">
+				<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item"><a href="#" ><img src="../img/banner1.jpg" /></a></div>  
+				<div class="mui-slider-item"><a href="#"><img src="../img/banner2.jpg" /></a></div>
+				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../img/banner1.jpg"></a></div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div class="news">
+				<div class="news_logo left">
+					<img src="../images/news.png">
+				</div>
+					<div class="news_list left" id="news-scroll">
+						<div class="swiper-slide">
+							<a href="/mall/qita/message_detail.html?id=39">GPX数字资产转入币包正式进入交易平台GPX数字资产转入币包正式进入交易平台GPX数字资产转入币包正式进入交易平台1</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="/mall/qita/message_detail.html?id=37">小苹果APP上线了！GPX数字资产转入币包正式进入交易平台GPX数字资产转入币包正式进入交易平台2 </a>
+						</div>
+						<div class="swiper-slide">
+							<a href="/mall/qita/message_detail.html?id=36">浓情端午粽情飘香3</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="/mall/qita/message_detail.html?id=36">GPX数字资产转入币包正式进入交易平台！1</a>
+						</div>
+					</div>
+				
+			</div>
+			<div class="classify">
+				<ul>
+					<li>
+						<a href="">
+							<img src="../img/top-nav-icon1.png" alt=""  class="classify_top">
+							<span class="classify_bottom">新品推荐</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../img/top-nav-icon2.png" alt="" class="classify_top">
+							<span class="classify_bottom">积分兑换</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../img/top-nav-icon3.png" alt="" class="classify_top">
+							<span class="classify_bottom">限时抢购</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../img/top-nav-icon4.png" alt="" class="classify_top">
+							<span class="classify_bottom">会员专享</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--商品-->
+			<div class="module-wrap">
+				<ul class="clearfix">
+					<li>
+						<a href="">
+							<span class="title1">超级品牌</span>
+							<div class="mark-img-box">
+								<img src="../img/markup-img1.png" alt="" class="pic1">
+								<img src="../img/markup-img2.png" alt="">
+							</div>
+							
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="title1">超级品类</span>
+							<div class="mark-img-box">
+								<img src="../img/markup-img3.png" alt="" class="pic1">
+								<img src="../img/markup-img4.png" alt="">
+							</div>
+							
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="title1">领券中心</span>
+							<div class="mark-img-box">
+								<img src="../img/markup-img5.png" alt="" class="pic1">
+								<img src="../img/markup-img6.png" alt="">
+							</div>
+							
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="title1">值得购买</span>
+							<div class="mark-img-box">
+								<img src="../img/markup-img7.png" alt="" class="pic1">
+								<img src="../img/markup-img8.png" alt="">
+							</div>
+							
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			
+		</div>
+		<!-- <nav class="mui-bar mui-bar-tab footer-nav" id="nav">
+			<a class="mui-tab-item mui-active" href="../home.html">
+				<span class="foot_top home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="shareCode.html">
+				<span class="foot_top code"></span>
+				<span class="mui-tab-label">分享二维码</span>
+			</a>
+			<a class="mui-tab-item">
+				<span class="foot_top  store"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="mui-tab-item" href="user.html">
+				<span class="foot_top mine"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav> -->
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/openWin.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script type="text/javascript">
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	var speed = 80;
+			var delay = 2200;
+			var height = 14;
+			var time;
+			window.onload = function(){
+				var area = document.getElementById("news-scroll");
+				area.innerHTML += area.innerHTML;
+				function scroll(){
+					if(area.scrollTop % height == 0){
+						clearInterval(time);
+						setTimeout(start,delay);
+					}else{
+						area.scrollTop++;
+						if(area.scrollTop >= area.scrollHeight/2){
+							area.scrollTop = 0;
+						}
+					}
+					
+				}
+				function start(){
+					time = setInterval(scroll,speed);
+					area.scrollTop++;
+				}
+				setTimeout(start,delay);
+			}
+		
+
+
+	</script>
+</body>
+</html>
